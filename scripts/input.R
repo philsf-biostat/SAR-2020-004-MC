@@ -6,7 +6,7 @@ dados <- read_excel("dataset/EPIINFODADOS.xlsx")
 dados <- data.table(dados)
 
 
-# deletar -----------------------------------------------------------------
+# colunas deletadas -------------------------------------------------------
 
 dados[, Idade := NULL] # remover Idade
 dados[, names(dados)[grep("Goniometria", names(dados))] := NULL] # remover Goniometria
@@ -14,7 +14,13 @@ dados[, names(dados)[grep("Graus", names(dados))] := NULL] # remover Graus
 dados[, DataColeta := NULL] # data de coleta
 dados[, Obs := NULL] # remover Observação
 
-# dados <- dados[Inclusao == "S"] # participantes excluidos
+
+# participantes excluidos -------------------------------------------------
+
+dados.particpantes <- dados # tabela de participantes
+dados.particpantes.exclusao <- dados[Inclusao == "N"] # salvar participantes excluidos
+dados <- dados[Inclusao == "S"] # excluir participantes da tabela de dedos
+
 
 # renomear colunas --------------------------------------------------------
 
@@ -37,8 +43,6 @@ setnames(dados, "MiE", "CamptodactiliaMiE")
 
 
 # reshape -----------------------------------------------------------------
-
-dados.particpantes <- dados
 
 ## Reshape para long table
 
