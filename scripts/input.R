@@ -30,9 +30,9 @@ dados[, Obs := NULL] # remover Observação
 
 # participantes excluidos -------------------------------------------------
 
-dados.particpantes <- dados # tabela de participantes
 dados.particpantes.exclusao <- dados[Inclusao == "N"] # salvar participantes excluidos
 dados <- dados[Inclusao == "S"] # excluir participantes da tabela de dedos
+dados.particpantes <- dados # tabela de participantes
 
 
 # renomear colunas --------------------------------------------------------
