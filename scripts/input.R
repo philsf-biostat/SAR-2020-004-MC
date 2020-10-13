@@ -10,6 +10,8 @@ dados <- data.table(dados)
 
 dados$Prontuario <- factor(dados$Prontuario)
 dados$UF <- factor(dados$UF)
+dados$Abandono <- factor(dados$Abandono)
+dados$Recidiva <- factor(dados$Recidiva)
 
 # deletar -----------------------------------------------------------------
 
