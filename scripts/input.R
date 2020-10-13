@@ -6,13 +6,6 @@ dados <- read_excel("dataset/EPIINFODADOS.xlsx")
 dados <- data.table(dados)
 
 
-# tipos de variaveis ------------------------------------------------------
-
-dados$Prontuario <- factor(dados$Prontuario)
-dados$UF <- factor(dados$UF)
-dados$Abandono <- factor(dados$Abandono)
-dados$Recidiva <- factor(dados$Recidiva)
-
 # deletar -----------------------------------------------------------------
 
 dados[, Idade := NULL] # remover Idade
@@ -21,7 +14,6 @@ dados[, names(dados)[grep("Graus", names(dados))] := NULL] # remover Graus
 dados[, Obs := NULL] # remover Observação
 
 # dados <- dados[Inclusao == "S"] # participantes excluidos
-
 
 # renomear colunas --------------------------------------------------------
 
@@ -56,4 +48,11 @@ dados %>% pivot_longer(#dados,
   names_pattern = "(Camptodactilia|Correcao|FinalAcompanhamento|Forma|TempoAcompanhamento)(...)",
 ) %>% data.table -> dados
 
+
+# tipos de variaveis ------------------------------------------------------
+
+dados$Prontuario <- factor(dados$Prontuario)
+dados$UF <- factor(dados$UF)
+dados$Abandono <- factor(dados$Abandono)
+dados$Recidiva <- factor(dados$Recidiva)
 
