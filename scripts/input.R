@@ -37,7 +37,7 @@ setnames(dados, "MiE", "CamptodactiliaMiE")
 
 # reshape -----------------------------------------------------------------
 
-dados.orig <- dados
+dados.particpantes <- dados
 
 ## Reshape para long table
 
