@@ -23,6 +23,7 @@ setnames(dados, "CorrecaoAndi", "CorrecaoAnD")
 setnames(dados, "AnDi", "AnD")
 setnames(dados, "TempoAcompanhamentoAnDi", "TempoAcompanhamentoAnD")
 setnames(dados, "FinalAcompanhamentoAnDi", "FinalAcompanhamentoAnD")
+setnames(dados, "FormaAnDi", "FormaAnD")
 
 # camptodacilia
 setnames(dados, "InD", "CamptodactiliaInD")
