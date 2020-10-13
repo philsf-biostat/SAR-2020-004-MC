@@ -6,6 +6,19 @@ dados <- read_excel("dataset/EPIINFODADOS.xlsx")
 dados <- data.table(dados)
 
 
+# tipos de variaveis (participante) ---------------------------------------
+
+dados$UniqueKey <- factor(dados$UniqueKey)
+dados$Prontuario <- factor(dados$Prontuario)
+dados$UF <- factor(dados$UF)
+dados$Abandono <- factor(dados$Abandono)
+dados$Recidiva <- factor(dados$Recidiva)
+dados$Iniciais <- factor(dados$Iniciais)
+dados$Genero <- factor(dados$Genero)
+dados$Inclusao <- factor(dados$Inclusao)
+dados$Tipo <- factor(dados$Tipo)
+
+
 # colunas deletadas -------------------------------------------------------
 
 dados[, Idade := NULL] # remover Idade
@@ -54,17 +67,7 @@ dados %>% pivot_longer(#dados,
 ) %>% data.table -> dados
 
 
-# tipos de variaveis ------------------------------------------------------
-
-dados$UniqueKey <- factor(dados$UniqueKey)
-dados$Prontuario <- factor(dados$Prontuario)
-dados$UF <- factor(dados$UF)
-dados$Abandono <- factor(dados$Abandono)
-dados$Recidiva <- factor(dados$Recidiva)
-dados$Iniciais <- factor(dados$Iniciais)
-dados$Genero <- factor(dados$Genero)
-dados$Inclusao <- factor(dados$Inclusao)
-dados$Tipo <- factor(dados$Tipo)
+# tipos de variaveis (dedo) -----------------------------------------------
 
 dados$Dedo <- factor(dados$Dedo)
 dados$Camptodactilia <- factor(dados$Camptodactilia)
