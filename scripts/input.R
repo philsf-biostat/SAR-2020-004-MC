@@ -16,7 +16,7 @@ dados$Recidiva <- factor(dados$Recidiva)
 dados$Iniciais <- factor(dados$Iniciais)
 dados$Genero <- factor(dados$Genero)
 dados$Inclusao <- factor(dados$Inclusao)
-dados$Tipo <- factor(dados$Tipo)
+dados$Tipo <- ordered(dados$Tipo)
 
 
 # colunas deletadas -------------------------------------------------------
