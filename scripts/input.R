@@ -41,3 +41,19 @@ setnames(dados, "AnD", "CamptodactiliaAnD")
 setnames(dados, "AnE", "CamptodactiliaAnE")
 setnames(dados, "MiD", "CamptodactiliaMiD")
 setnames(dados, "MiE", "CamptodactiliaMiE")
+
+
+# reshape -----------------------------------------------------------------
+
+dados.orig <- dados
+
+## Reshape para long table
+
+dados %>% pivot_longer(#dados,
+  cols = names(dados)[grep("Camptodactilia|Correcao|FinalAcompanhamento|Forma|TempoAcompanhamento", names(dados))],
+  # names_prefix = "Correcao",
+  names_to = c(".value", "Dedo"),
+  names_pattern = "(Camptodactilia|Correcao|FinalAcompanhamento|Forma|TempoAcompanhamento)(...)",
+) %>% data.table -> dados
+
+
