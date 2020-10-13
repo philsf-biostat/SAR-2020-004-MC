@@ -6,6 +6,11 @@ dados <- read_excel("dataset/EPIINFODADOS.xlsx")
 dados <- data.table(dados)
 
 
+# tipos de variaveis ------------------------------------------------------
+
+dados$Prontuario <- factor(dados$Prontuario)
+dados$UF <- factor(dados$UF)
+
 # deletar -----------------------------------------------------------------
 
 dados[, Idade := NULL] # remover Idade
