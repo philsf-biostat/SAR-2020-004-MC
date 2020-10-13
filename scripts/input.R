@@ -55,4 +55,8 @@ dados$Prontuario <- factor(dados$Prontuario)
 dados$UF <- factor(dados$UF)
 dados$Abandono <- factor(dados$Abandono)
 dados$Recidiva <- factor(dados$Recidiva)
+dados$Dedo <- factor(dados$Dedo)
+dados$Camptodactilia <- factor(dados$Camptodactilia)
+dados$Forma <- factor(dados$Forma)
+dados$Correcao <- factor(dados$Correcao)
 
