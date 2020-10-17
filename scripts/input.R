@@ -74,6 +74,15 @@ dados$Camptodactilia <- factor(dados$Camptodactilia)
 dados$Forma <- factor(dados$Forma)
 dados$Correcao <- factor(dados$Correcao)
 
+
+# limpeza final -----------------------------------------------------------
+
+dados[Correcao == "Missing", Correcao := NA] # dados faltantes da Correcao
+# dados <- dados[Camptodactilia == "Yes"] # excluir dedos sem camptodactilia
+dados[, Inclusao := NULL] # coluna inclusao já cumpriu seu papel
+dados <- droplevels(dados) # limpar níveis dos fatores
+
+
 # Abandono ----------------------------------------------------------------
 
 dados[ Camptodactilia == "No" ]$Abandono <- NA
