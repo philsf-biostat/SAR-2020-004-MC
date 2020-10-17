@@ -74,3 +74,10 @@ dados$Camptodactilia <- factor(dados$Camptodactilia)
 dados$Forma <- factor(dados$Forma)
 dados$Correcao <- factor(dados$Correcao)
 
+# Abandono ----------------------------------------------------------------
+
+dados[ Camptodactilia == "No" ]$Abandono <- NA
+dados[ Camptodactilia == "Yes" & (dados$FinalAcompanhamento >= dados$DataAbandono) ]$Abandono <- "Yes"
+dados[ Camptodactilia == "Yes" & (dados$FinalAcompanhamento < dados$DataAbandono) ]$Abandono <- "No"
+
+
