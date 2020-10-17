@@ -79,6 +79,7 @@ dados %>%
 # tipos de variaveis (dedo) -----------------------------------------------
 
 dados$Dedo <- factor(dados$Dedo)
+dados$Lado <- factor(dados$Lado)
 dados$Camptodactilia <- factor(dados$Camptodactilia)
 dados$Forma <- factor(dados$Forma)
 dados$Correcao <- factor(dados$Correcao)
