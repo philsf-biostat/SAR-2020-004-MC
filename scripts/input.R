@@ -67,6 +67,15 @@ dados %>% pivot_longer(#dados,
 ) %>% data.table -> dados
 
 
+# lateralidade do dedo ----------------------------------------------------
+
+dados %>%
+  separate(
+    Dedo,
+    c("Dedo", "Lado"),
+    2
+    ) %>% data.table -> dados
+
 # tipos de variaveis (dedo) -----------------------------------------------
 
 dados$Dedo <- factor(dados$Dedo)
