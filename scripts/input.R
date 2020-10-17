@@ -90,3 +90,8 @@ dados[ Camptodactilia == "Yes" & (dados$FinalAcompanhamento >= dados$DataAbandon
 dados[ Camptodactilia == "Yes" & (dados$FinalAcompanhamento < dados$DataAbandono) ]$Abandono <- "No"
 
 
+# Idade -------------------------------------------------------------------
+
+dados.particpantes$Idade <- cut(dados.particpantes$IdadeInicioAcompanhamento, breaks = c(0, 12, 24, 60, 120, Inf), right = FALSE)
+dados$Idade <- cut(dados$IdadeInicioAcompanhamento, breaks = c(0, 12, 24, 60, 120, Inf), right = FALSE)
+
